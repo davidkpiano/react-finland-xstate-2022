@@ -1,0 +1,148 @@
+*,
+*:before,
+*:after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: #131313;
+  color: white;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: 'time' 'controls';
+  width: max-content;
+  padding: 2rem 3rem;
+  border-radius: 0.25rem;
+  background-color: #fefefe;
+  color: #111;
+}
+
+#button-like {
+  background-image: url(/icons/heart-regular.svg);
+}
+
+#button-like[data-like-status='liked'] {
+  background-image: url(/icons/heart-solid.svg);
+}
+
+#button-dislike {
+  background-image: url(/icons/thumbs-down-solid.svg);
+}
+
+#button-play {
+  background-image: url(/icons/play-solid.svg);
+}
+
+#button-pause {
+  background-image: url(/icons/pause-solid.svg);
+}
+
+#button-skip {
+  background-image: url(/icons/step-forward-solid.svg);
+}
+
+#button-loading {
+  background-image: url(/icons/spinner-third-duotone.svg);
+  background-color: transparent;
+  animation: spin 0.5s linear infinite;
+}
+
+#button-volume {
+  background-image: url(/icons/volume-solid.svg);
+}
+#button-volume[data-level='high'] {
+  background-image: url(/icons/volume-up-solid.svg);
+}
+
+#button-volume[data-level='low'] {
+  background-image: url(/icons/volume-down-solid.svg);
+}
+
+#button-volume[data-level='zero'] {
+  background-image: url(/icons/volume-off-solid.svg);
+}
+
+#button-volume[data-status='muted'] {
+  background-image: url(/icons/volume-mute-solid.svg);
+}
+
+output {
+  width: 5rem;
+  text-align: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+button {
+  appearance: none;
+  border: none;
+  height: 4vw;
+  width: 4vw;
+  background-size: 70%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.song {
+  display: grid;
+  grid-template-rows: auto auto 3rem;
+  align-items: center;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    'title title'
+    'artist artist'
+    'scrubber elapsed';
+}
+
+.song > .title {
+  font-size: 120%;
+  font-weight: bold;
+  grid-area: title;
+}
+
+.song > .artist {
+  grid-area: artist;
+}
+
+.song > #scrubber {
+  grid-area: scrubber;
+}
+
+.song > #elapsed {
+  grid-area: elapsed;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3vw;
+  column-gap: 3vw;
+}

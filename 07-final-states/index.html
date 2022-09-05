@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XState Media Player</title>
+  </head>
+  <body>
+    <h1>07. Final states</h1>
+
+    <div id="app">
+      <div class="song">
+        <div class="title"><em>Song Title</em></div>
+        <div class="artist"><em>Artist</em></div>
+        <input type="range" id="scrubber" min="0" max="0" />
+        <output id="elapsed"></output>
+      </div>
+      <div class="controls">
+        <button id="button-like"></button>
+        <button id="button-dislike"></button>
+        <button id="button-play"></button>
+        <button id="button-pause"></button>
+        <button id="button-loading"></button>
+        <button id="button-skip"></button>
+        <button id="button-volume"></button>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+    <!-- <script type="module" src="./main.final.js"></script> -->
+  </body>
+</html>
