@@ -24,7 +24,7 @@ html {
   color: white;
 }
 
-#app {
+#player {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-areas: 'time' 'controls';

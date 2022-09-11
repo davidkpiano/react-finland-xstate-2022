@@ -1,16 +1,23 @@
 {
-  "name": "frontend-masters-xstate-v2",
+  "name": "app",
+  "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^2.6.4"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@xstate/inspect": "^0.5.0",
-    "xstate": "^4.25.0"
+    "@xstate/inspect": "^0.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "xstate": "^4.33.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "vite": "^3.1.0"
   }
 }
