@@ -16,6 +16,7 @@ const playerMachine = createMachine({
   },
   states: {
     loading: {
+      tags: ['loading'],
       on: {
         LOADED: {
           actions: 'assignSongData',
@@ -34,6 +35,10 @@ const playerMachine = createMachine({
       on: {
         PAUSE: { target: 'paused' },
       },
+      always: {
+        cond: (ctx) => ctx.elapsed >= ctx.duration,
+        target: 'paused',
+      },
     },
   },
   on: {
@@ -50,17 +55,28 @@ const playerMachine = createMachine({
     DISLIKE: {
       actions: ['dislikeSong', raise('SKIP')],
     },
+    'LIKE.TOGGLE': [
+      {
+        cond: (ctx) => ctx.likeStatus === 'liked',
+        actions: raise('UNLIKE'),
+      },
+      {
+        cond: (ctx) => ctx.likeStatus === 'unliked',
+        actions: raise('LIKE'),
+      },
+    ],
     VOLUME: {
+      cond: 'volumeWithinRange',
       actions: 'assignVolume',
+    },
+    'AUDIO.TIME': {
+      actions: 'assignTime',
     },
   },
 }).withConfig({
   actions: {
     assignSongData: assign({
-      title: (_, e) => {
-        console.log(e);
-        return e.data.title;
-      },
+      title: (_, e) => e.data.title,
       artist: (_, e) => e.data.artist,
       duration: (ctx, e) => e.data.duration,
       elapsed: 0,
@@ -86,6 +102,11 @@ const playerMachine = createMachine({
     },
     playAudio: () => {},
     pauseAudio: () => {},
+  },
+  guards: {
+    volumeWithinRange: (_, e) => {
+      return e.level <= 10 && e.level >= 0;
+    },
   },
 });
 
@@ -129,7 +150,7 @@ export function Player() {
       <div class="controls">
         <button
           id="button-like"
-          onClick={() => send({ type: 'LIKE' })}
+          onClick={() => send({ type: 'LIKE.TOGGLE' })}
           data-like-status={context.likeStatus}
         ></button>
         <button
