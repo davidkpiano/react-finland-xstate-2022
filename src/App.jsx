@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
-import { Player } from './00-modeling/Player.final';
+// import { Player } from './00-modeling/Player.final';
+import { Player } from './01-states-transitions/Player.final';
 
 function xPlayer() {
   return (

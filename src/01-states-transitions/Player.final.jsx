@@ -1,71 +1,30 @@
+import { createMachine, assign, interpret, send } from 'xstate';
+import { useMachine } from '@xstate/react';
 import { useEffect } from 'react';
-import { useReducer } from 'react';
 
-const initialState = {
-  value: 'loading', // or 'playing' or 'paused'
-};
-
-function playerMachine(state, event) {
-  switch (state.value) {
-    case 'loading':
-      if (event.type === 'LOADED') {
-        return { ...state, value: 'playing' };
-      }
-      return state;
-    case 'playing':
-      if (event.type === 'PAUSE') {
-        return { ...state, value: 'paused' };
-      }
-      return state;
-    case 'paused':
-      if (event.type === 'PLAY') {
-        return { ...state, value: 'playing' };
-      }
-      return state;
-    default:
-      return state;
-  }
-}
-
-console.log(playerMachine(initialState, { type: 'LOADED' }));
-
-const playerMachineObject = {
+const playerMachine = createMachine({
   initial: 'loading',
   states: {
     loading: {
       on: {
-        LOADED: 'playing',
-      },
-    },
-    playing: {
-      on: {
-        PAUSE: 'paused',
+        LOADED: { target: 'playing' },
       },
     },
     paused: {
       on: {
-        PLAY: 'playing',
+        PLAY: { target: 'playing' },
+      },
+    },
+    playing: {
+      on: {
+        PAUSE: { target: 'paused' },
       },
     },
   },
-};
-
-function playerMachine2(state, event) {
-  const nextStateValue =
-    playerMachineObject.states[state.value].on?.[event.type];
-
-  if (!nextStateValue) {
-    return state;
-  }
-
-  return {
-    ...state,
-    value: nextStateValue,
-  };
-}
+});
 
 export function Player() {
-  const [state, send] = useReducer(playerMachine, initialState);
+  const [state, send] = useMachine(playerMachine);
 
   useEffect(() => {
     const i = setTimeout(() => {
@@ -92,13 +51,13 @@ export function Player() {
       <div class="controls">
         <button id="button-like"></button>
         <button id="button-dislike"></button>
-        {state.value === 'paused' && (
+        {state.matches('paused') && (
           <button
             id="button-play"
             onClick={() => send({ type: 'PLAY' })}
           ></button>
         )}
-        {state.value === 'playing' && (
+        {state.matches('playing') && (
           <button
             id="button-pause"
             onClick={() => {
