@@ -38,17 +38,17 @@ export function Player() {
 
   return (
     <div id="player">
-      <div class="song">
-        <div class="title">
+      <div className="song">
+        <div className="title">
           <em>Song Title</em>
         </div>
-        <div class="artist">
+        <div className="artist">
           <em>Artist</em>
         </div>
         <input type="range" id="scrubber" min="0" max="0" />
         <output id="elapsed"></output>
       </div>
-      <div class="controls">
+      <div className="controls">
         <button id="button-like"></button>
         <button id="button-dislike"></button>
         {state.matches('paused') && (

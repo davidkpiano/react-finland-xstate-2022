@@ -247,9 +247,9 @@ export function Player() {
 
   return (
     <div id="player">
-      <div class="song">
-        <div class="title">{context.title ?? <>&nbsp;</>}</div>
-        <div class="artist">{context.artist ?? <>&nbsp;</>}</div>
+      <div className="song">
+        <div className="title">{context.title ?? <>&nbsp;</>}</div>
+        <div className="artist">{context.artist ?? <>&nbsp;</>}</div>
         <input
           type="range"
           id="scrubber"
@@ -267,7 +267,7 @@ export function Player() {
           {formatTime(context.elapsed - context.duration)}
         </output>
       </div>
-      <div class="controls">
+      <div className="controls">
         <button
           id="button-like"
           onClick={() => send({ type: 'LIKE.TOGGLE' })}

@@ -1,31 +1,31 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
-// import { Player } from './00-modeling/Player.final';
-// import { Player } from './01-states-transitions/Player.final';
-// import { Player } from './02-actions/Player.final';
-// import { Player } from './03-context/Player.final';
-// import { Player } from './04-guards/Player.final';
-// import { Player } from './05-compound-states/Player.final';
-// import { Player } from './06-parallel-states/Player.final';
-// import { Player } from './07-final-states/Player.final';
-// import { Player } from './08-history-states/Player.final';
-import { Player } from './09-actors/Player.final';
+// import { Player } from './00-modeling/Player';
+import { Player } from './01-states-transitions/Player';
+// import { Player } from './02-actions/Player';
+// import { Player } from './03-context/Player';
+// import { Player } from './04-guards/Player';
+// import { Player } from './05-compound-states/Player';
+// import { Player } from './06-parallel-states/Player';
+// import { Player } from './07-final-states/Player';
+// import { Player } from './08-history-states/Player';
+// import { Player } from './09-actors/Player';
 
 function xPlayer() {
   return (
     <div id="player">
-      <div class="song">
-        <div class="title">
+      <div className="song">
+        <div className="title">
           <em>Song Title</em>
         </div>
-        <div class="artist">
+        <div className="artist">
           <em>Artist</em>
         </div>
         <input type="range" id="scrubber" min="0" max="0" />
         <output id="elapsed"></output>
       </div>
-      <div class="controls">
+      <div className="controls">
         <button id="button-like"></button>
         <button id="button-dislike"></button>
         <button id="button-play"></button>
