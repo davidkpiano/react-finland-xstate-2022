@@ -27,8 +27,6 @@ function playerMachine(state, event) {
   }
 }
 
-console.log(playerMachine(initialState, { type: 'LOADED' }));
-
 const playerMachineObject = {
   initial: 'loading',
   states: {
