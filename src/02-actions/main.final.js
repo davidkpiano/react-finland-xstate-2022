@@ -1,6 +1,6 @@
 // @ts-check
 import '../style.css';
-import { createMachine, assign, interpret, send } from 'xstate';
+import { createMachine, interpret } from 'xstate';
 import { raise } from 'xstate/lib/actions';
 import elements from '../utils/elements';
 
