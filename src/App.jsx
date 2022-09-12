@@ -5,8 +5,8 @@ import './App.css';
 // import { Player } from './03-context/Player';
 // import { Player } from './04-guards/Player';
 // import { Player } from './05-compound-states/Player';
-import { Player } from './06-parallel-states/Player';
-// import { Player } from './07-final-states/Player';
+// import { Player } from './06-parallel-states/Player';
+import { Player } from './07-final-states/Player';
 // import { Player } from './08-history-states/Player';
 // import { Player } from './09-actors/Player';
 
