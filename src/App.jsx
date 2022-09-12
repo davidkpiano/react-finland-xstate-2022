@@ -8,7 +8,8 @@ import './App.css';
 // import { Player } from './04-guards/Player.final';
 // import { Player } from './05-compound-states/Player.final';
 // import { Player } from './06-parallel-states/Player.final';
-import { Player } from './07-final-states/Player.final';
+// import { Player } from './07-final-states/Player.final';
+import { Player } from './08-history-states/Player.final';
 
 function xPlayer() {
   return (
