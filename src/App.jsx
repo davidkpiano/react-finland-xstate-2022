@@ -5,7 +5,8 @@ import './App.css';
 // import { Player } from './01-states-transitions/Player.final';
 // import { Player } from './02-actions/Player.final';
 // import { Player } from './03-context/Player.final';
-import { Player } from './04-guards/Player.final';
+// import { Player } from './04-guards/Player.final';
+import { Player } from './05-compound-states/Player.final';
 
 function xPlayer() {
   return (
