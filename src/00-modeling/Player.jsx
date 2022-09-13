@@ -42,14 +42,16 @@ export function Player() {
         {state.value === 'paused' && (
           <button
             id="button-play"
-            onClick={() => send({ type: 'PLAY' })}
+            onClick={() => {
+              // Send a 'PLAY' event
+            }}
           ></button>
         )}
         {state.value === 'playing' && (
           <button
             id="button-pause"
             onClick={() => {
-              send({ type: 'PAUSE' });
+              // Send a 'PAUSE' event
             }}
           ></button>
         )}

@@ -27,5 +27,7 @@ Let's build a media player. It will have the following functionality:
 
 Let's model the **loading**, **play**, and **pause** functionality of the media player for now.
 
-1. Model these states and transitions as a finite state machine, creating a transition function that uses a `switch` statement or an object
-2. "Interpret" that machine in a way that creates an object that you can `.send(...)` events to. The object should hold internal state determined by the transition function created.
+1. Model these states and transitions as a finite state machine, creating a transition function (reducer) that uses a `switch` statement or an object
+1. "Interpret" that machine in a way that creates an object that you can `.send(...)` events to. The object should hold internal state determined by the transition function created.
+1. Move the reducer to a `useReducer()` hook.
+1. Send `'PLAY'` and `'PAUSE'` events from buttons in the `<Player>` component to the reducer.

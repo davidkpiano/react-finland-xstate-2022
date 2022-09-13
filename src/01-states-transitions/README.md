@@ -19,5 +19,9 @@
 
 1. Take the previous state machine you created (using switch statements or objects) and refactor it to use XState (`createMachine(...)`).
 2. Test the flow with `machine.transition(state, event)`
-3. Interpret the machine using `interpret(machine).start()`
+3. Use the machine by passing it into a `useMachine(machine)` hook in the `<Player>` component.
 4. Inspect the machine using `@xstate/inspect`
+
+## Resources
+
+- [XState React documentation](https://xstate.js.org/docs/packages/xstate-react/)
