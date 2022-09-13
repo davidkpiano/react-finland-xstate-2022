@@ -8,9 +8,9 @@ import './App.css';
 // import { Player } from './06-parallel-states/Player';
 // import { Player } from './07-final-states/Player';
 // import { Player } from './08-history-states/Player';
-import { Player } from './09-actors/Player';
+// import { Player } from './09-actors/Player';
 
-function xPlayer() {
+function Player() {
   return (
     <div id="player">
       <div className="song">
