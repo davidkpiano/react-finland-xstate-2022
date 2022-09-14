@@ -31,3 +31,7 @@ Let's model the **loading**, **play**, and **pause** functionality of the media 
 1. "Interpret" that machine in a way that creates an object that you can `.send(...)` events to. The object should hold internal state determined by the transition function created.
 1. Move the reducer to a `useReducer()` hook.
 1. Send `'PLAY'` and `'PAUSE'` events from buttons in the `<Player>` component to the reducer.
+
+## Resources
+
+- [You don't need a library for state machines](https://stately.ai/blog/you-dont-need-a-library-for-state-machines) (Stately.ai blog)

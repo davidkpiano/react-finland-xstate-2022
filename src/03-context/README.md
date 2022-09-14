@@ -11,3 +11,7 @@
 Add the missing initial `context` values to the player machine.
 
 Then, use the `assign(...)` action creator to update the `context` via actions.
+
+## Resources
+
+- [Context](https://xstate.js.org/docs/guides/context.html) (XState docs)

@@ -13,3 +13,5 @@
 ## Exercises
 
 Invoke actors for loading a song and playing the audio. Make the `playAudio` and `pauseAudio` actions actually send events to the invoked audio actor.
+
+- [Actors](https://xstate.js.org/docs/guides/actors.html) (XState docs)

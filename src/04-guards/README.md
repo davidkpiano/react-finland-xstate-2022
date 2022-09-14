@@ -13,3 +13,7 @@
 Add the missing guards to ensure the `volume` stays within range, and that sending the `'LIKE.TOGGLE'` event performs the right action.
 
 Then, add the missing eventless transition to the `playing` state.
+
+## Resources
+
+- [Guarded transitions](https://xstate.js.org/docs/guides/guards.html) (XState docs)

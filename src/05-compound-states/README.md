@@ -12,3 +12,7 @@
 ## Exercises
 
 Add the `paused` and `playing` states to a parent `ready` state.
+
+## Resources
+
+- [Compound states](https://xstate.js.org/docs/guides/hierarchical.html) (XState docs)

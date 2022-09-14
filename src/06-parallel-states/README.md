@@ -9,3 +9,7 @@
 ## Exercises
 
 Add a parallel state so that the `player` and `volume` are separate regions.
+
+## Resources
+
+- [Parallel states](https://xstate.js.org/docs/guides/parallel.html) (XState docs)

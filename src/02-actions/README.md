@@ -12,3 +12,7 @@
 Add the missing actions to the machine. For now, these actions can just be empty functions or `console.log(...)` statements.
 
 You can start by putting the actions inline, and then add them inside `.withConfig` later.
+
+## Resources
+
+- [Actions](https://xstate.js.org/docs/guides/actions.html) (XState docs)

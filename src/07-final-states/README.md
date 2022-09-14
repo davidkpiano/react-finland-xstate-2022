@@ -12,3 +12,7 @@
 ## Exercises
 
 Add a `finished` final state so that the logic for the `player` state is more semantic, and so that the transitions can be more natural.
+
+## Resources
+
+- [Final states](https://xstate.js.org/docs/guides/final.html) (XState docs)
